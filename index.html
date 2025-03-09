@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="./css/main.css" rel="stylesheet"/>
+</head>
+<body class="flex flex-col min-h-screen">
+<!-- Header start -->
+<header class="bg-blue-950 fixed top-0 inset-x-0 z-10">
+    <div class="container flex justify-between items-center py-5 text-white">
+        <a href="#" class="text-md sm:text-xl font-semibold">Автошкола</a>
+
+        <nav class="hidden lg:block">
+            <ul class="flex gap-8 text-[18px] font-semibold">
+                <li>
+                    <a href="#" class="boredr hover:text-orange-400 hover:border-b-2"
+                    >Главная</a
+                    >
+                </li>
+                <li>
+                    <a href="#" class="boredr hover:text-orange-400 hover:border-b-2"
+                    >ПДД</a
+                    >
+                </li>
+                <li>
+                    <a href="#" class="boredr hover:text-orange-400 hover:border-b-2"
+                    >Блог</a
+                    >
+                </li>
+                <li>
+                    <a href="#" class="boredr hover:text-orange-400 hover:border-b-2"
+                    >Онлайн тест</a
+                    >
+                </li>
+                <li>
+                    <a href="faq.html" class="boredr hover:text-orange-400 hover:border-b-2"
+                    >Справка FAQ</a
+                    >
+                </li>
+            </ul>
+        </nav>
+
+        <div class="sm:flex gap-4 font-semibold text-white hidden">
+            <a
+                    href=""
+                    class="flex items-center px-5 py-2 bg-orange-400 rounded-xl hover:bg-white hover:text-black"
+            >Регистрация</a
+            >
+            <a
+                    href=""
+                    class="flex items-center px-5 py-2 bg-orange-400 rounded-xl hover:bg-white hover:text-black"
+            >Войти</a
+            >
+        </div>
+
+        <div class="flex lg:hidden">
+            <nav
+                    id="nav"
+                    class="absolute inset-x-0 top-full bg-blue-950 py-4 text-center hidden target:block peer"
+            >
+                <ul
+                        class="flex flex-col items-center gap-8 text-[18px] font-semibold"
+                >
+                    <li class="w-full">
+                        <a href="#" class="inline-block w-full">Главная</a>
+                    </li>
+                    <li class="w-full">
+                        <a href="#" class="inline-block w-full">ПДД</a>
+                    </li>
+                    <li class="w-full">
+                        <a href="#" class="inline-block w-full">Блог</a>
+                    </li>
+                    <li class="w-full">
+                        <a href="#" class="inline-block w-full">Онлайн тест</a>
+                    </li>
+                    <li class="w-full">
+                        <a href="#" class="inline-block w-full">Справка FAQ</a>
+                    </li>
+                </ul>
+                <div
+                        class="flex sm:hidden flex-col items-center gap-4 font-semibold mt-5"
+                >
+                    <a
+                            href=""
+                            class="w-35 px-5 py-2 bg-orange-400 rounded-xl hover:bg-white hover:text-black"
+                    >Регистрация</a
+                    >
+                    <a
+                            href=""
+                            class="text-center w-35 px-5 py-2 bg-orange-400 rounded-xl hover:bg-white hover:text-black"
+                    >Войти</a
+                    >
+                </div>
+            </nav>
+
+            <!-- Кнопка открыть меню -->
+            <a
+                    href="#nav"
+                    class="block peer-target:hidden peer-target:[&+a]:block"
+            >
+                <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        class="size-7"
+                >
+                    <path
+                            fill-rule="evenodd"
+                            d="M3 6.75A.75.75 0 0 1 3.75 6h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 6.75ZM3 12a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 12Zm0 5.25a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75a.75.75 0 0 1-.75-.75Z"
+                            clip-rule="evenodd"
+                    />
+                </svg>
+            </a>
+
+            <!-- Кнопка закрыть меню -->
+            <a href="#" class="hidden">
+                <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        class="size-6"
+                >
+                    <path
+                            fill-rule="evenodd"
+                            d="M5.47 5.47a.75.75 0 0 1 1.06 0L12 10.94l5.47-5.47a.75.75 0 1 1 1.06 1.06L13.06 12l5.47 5.47a.75.75 0 1 1-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 0 1-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 0 1 0-1.06Z"
+                            clip-rule="evenodd"
+                    />
+                </svg>
+            </a>
+        </div>
+    </div>
+</header>
+<!-- Header end -->
+
+<main class="flex-grow">
+
+    <!--    Главная -->
+    <section class="py-10 relative mt-20 sm:mb-0">
+        <!-- Blob Shapes -->
+        <!-- <div class="absolute top-10 left-180 w-20 -z-10">
+          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <path
+              fill="#ff8904"
+              d="M36.8,-58C51.1,-55.4,68.5,-52.5,68.5,-42.8C68.6,-33,51.3,-16.5,42.3,-5.2C33.4,6.2,32.7,12.3,30.4,18.1C28.1,23.9,24.1,29.3,18.7,35.8C13.4,42.3,6.7,49.9,1.2,47.8C-4.3,45.7,-8.6,34,-18.4,30.1C-28.3,26.2,-43.8,30.2,-55.1,26.5C-66.3,22.8,-73.4,11.4,-69,2.5C-64.6,-6.3,-48.8,-12.7,-43.3,-26.4C-37.8,-40.1,-42.6,-61.1,-37.1,-68.8C-31.6,-76.5,-15.8,-70.8,-2.3,-66.9C11.2,-62.9,22.5,-60.7,36.8,-58Z"
+              transform="translate(100 100)"
+            />
+          </svg>
+        </div>
+        <div class="absolute top-10 left-10 w-40 -z-10">
+          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <path
+              fill="#ff8904"
+              d="M17.1,-27C25.9,-24.6,39.2,-27.5,48,-23.9C56.7,-20.2,60.9,-10.1,60.3,-0.3C59.8,9.5,54.6,19,46.6,23.9C38.5,28.7,27.7,29,19.5,28.7C11.3,28.3,5.6,27.4,-5.3,36.6C-16.2,45.8,-32.4,65,-46.4,68.7C-60.4,72.4,-72.2,60.4,-70.5,46.4C-68.8,32.3,-53.6,16.2,-47.4,3.5C-41.3,-9.1,-44.3,-18.2,-40.9,-23.4C-37.5,-28.6,-27.8,-29.9,-19.9,-32.8C-12,-35.7,-6,-40.2,-0.9,-38.6C4.2,-37,8.4,-29.4,17.1,-27Z"
+              transform="translate(100 100)"
+            />
+          </svg>
+        </div>
+
+        <div class="absolute bottom-10 left-1/3 w-32 -z-10">
+          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <path
+              fill="#ff8904"
+              d="M17.1,-27C25.9,-24.6,39.2,-27.5,48,-23.9C56.7,-20.2,60.9,-10.1,60.3,-0.3C59.8,9.5,54.6,19,46.6,23.9C38.5,28.7,27.7,29,19.5,28.7C11.3,28.3,5.6,27.4,-5.3,36.6C-16.2,45.8,-32.4,65,-46.4,68.7C-60.4,72.4,-72.2,60.4,-70.5,46.4C-68.8,32.3,-53.6,16.2,-47.4,3.5C-41.3,-9.1,-44.3,-18.2,-40.9,-23.4C-37.5,-28.6,-27.8,-29.9,-19.9,-32.8C-12,-35.7,-6,-40.2,-0.9,-38.6C4.2,-37,8.4,-29.4,17.1,-27Z"
+              transform="translate(100 100)"
+            />
+          </svg>
+        </div> -->
+
+        <div class="container flex items-center justify-between ">
+            <div class="flex flex-col gap-6 text-center sm:text-start">
+                <h1 class="text-3xl font-bold sm:text-5xl">Проверьте свои знания ПДД онлайн!</h1>
+
+                <p class="text-lg sm:text-2xl">
+                    Проверьте свои знания ПДД онлайн! <br/>
+                    Станьте уверенным водителем с нашими тестами и справочником
+                </p>
+                <div class="flex justify-center sm:justify-start gap-2 sm:gap-4">
+                    <a
+                            href="#"
+                            class=" px-3 py-2  sm:px-5 sm:py-2 text-white font-semibold border border-orange-400 bg-orange-400 rounded-xl hover:bg-white hover:text-black"
+                    >Начать тест</a
+                    >
+                    <a
+                            href=""
+                            class="px-3 py-2  sm:px-5 sm:py-2  text-black font-semibold border border-orange-400 rounded-xl hover:bg-orange-400 hover:text-white "
+                    >Читать блог</a
+                    >
+                </div>
+            </div>
+            <div>
+                <img src="./img/car.png" alt="car" class="w-[800px] h-auto hidden sm:block"/>
+            </div>
+        </div>
+    </section>
+    <!--    Главная end -->
+
+    <!--    ПДД -->
+    <section class="py-15 bg-gray-200">
+        <div class="container  gap-6">
+            <h2 class="text-center mb-10 text-2xl font-semibold">ПДД КР 2025</h2>
+            <div class=" flex flex-col sm:flex-row flex-wrap items-center justify-center md:justify-around gap-5 xl:gap-1 ">
+                <div class="flex flex-col gap-4 p-5 max-w-[300px] min-h-[250px] w-full text-center bg-white rounded-xl">
+                    <h2 class="text-md font-semibold ">ПДД КР 2024</h2>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa sit rerum incidunt, a
+                        consequuntur
+                        recusandae</p>
+                    <a href="#"
+                       class="px-3 py-2  sm:px-5 sm:py-2 text-white font-semibold border border-orange-400 bg-orange-400 rounded-xl hover:bg-white hover:text-black">Перейти</a>
+                </div>
+                <div class="flex flex-col gap-4 p-5 max-w-[300px] min-h-[250px] w-full text-center bg-white rounded-xl">
+                    <h2 class="text-md font-semibold ">Дорожные знаки</h2>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa sit rerum incidunt, a
+                        consequuntur
+                        recusandae</p>
+                    <a href="#"
+                       class="px-3 py-2  sm:px-5 sm:py-2 text-white font-semibold border border-orange-400 bg-orange-400 rounded-xl hover:bg-white hover:text-black">Перейти</a>
+                </div>
+                <div class="flex flex-col gap-4 p-5 max-w-[300px] min-h-[250px] w-full text-center bg-white rounded-xl">
+                    <h2 class="text-md font-semibold ">Дорожная разметка</h2>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa sit rerum incidunt, a
+                        consequuntur
+                        recusandae</p>
+                    <a href="#"
+                       class="px-3 py-2  sm:px-5 sm:py-2 text-white font-semibold border border-orange-400 bg-orange-400 rounded-xl hover:bg-white hover:text-black">Перейти</a>
+                </div>
+                <div class="flex flex-col gap-4 p-5 max-w-[300px] min-h-[250px] w-full text-center bg-white rounded-xl">
+                    <h2 class="text-md font-semibold ">Основные положения по допуску ТС к эксплуатации
+                        ПДД по темам</h2>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. consectetur adipisicing elit. </p>
+                    <a href="#"
+                       class="px-3 py-2   sm:px-5 sm:py-2 text-white font-semibold border border-orange-400 bg-orange-400 rounded-xl hover:bg-white hover:text-black">Перейти</a>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+    <!--    ПДД end -->
+
+    <!--    Блог -->
+    <section class="py-15 ">
+        <div class="container flex flex-col  gap-6">
+            <h3 class="text-center text-3xl mb-5 font-semibold">Блог новостей</h3>
+            <div class="flex flex-wrap items-center justify-around gap-5 lg:gap-1">
+                <div class="flex flex-col gap-4 p-5 w-full md:max-w-[300px]  items-center text-center bg-gray-200 rounded-xl ">
+                    <img src="./img/010-1.jpg" alt="">
+                    <h3 class="text-2xl">Заголовок</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae dolores, possimus pariatur
+                        animi temporibus nesciunt praesentium dolore sed nulla... </p>
+                    <a href="#"
+                       class="px-3 py-2  sm:px-5 sm:py-2 text-white font-semibold border border-orange-400 bg-orange-400 rounded-xl hover:bg-white hover:text-black w-full">Посмотреть</a>
+                </div>
+                <div class="flex flex-col gap-4 p-5 w-full md:max-w-[300px]  items-center text-center bg-gray-200 rounded-xl ">
+                    <img src="./img/010-1.jpg" alt="">
+                    <h3 class="text-2xl">Заголовок</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae dolores, possimus pariatur
+                        animi temporibus nesciunt praesentium dolore sed nulla... </p>
+                    <a href="#"
+                       class="px-3 py-2  sm:px-5 sm:py-2 text-white font-semibold border border-orange-400 bg-orange-400 rounded-xl hover:bg-white hover:text-black w-full">Посмотреть</a>
+                </div>
+                <div class="flex flex-col gap-4 p-5 w-full md:max-w-[300px]  items-center text-center bg-gray-200 rounded-xl ">
+                    <img src="./img/010-1.jpg" alt="">
+                    <h3 class="text-2xl">Заголовок</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae dolores, possimus pariatur
+                        animi temporibus nesciunt praesentium dolore sed nulla... </p>
+                    <a href="#"
+                       class="px-3 py-2  sm:px-5 sm:py-2 text-white font-semibold border border-orange-400 bg-orange-400 rounded-xl hover:bg-white hover:text-black w-full">Посмотреть</a>
+                </div>
+                <div class="flex flex-col gap-4 p-5 w-full md:max-w-[300px]  items-center text-center bg-gray-200 rounded-xl ">
+                    <img src="./img/010-1.jpg" alt="">
+                    <h3 class="text-2xl">Заголовок</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae dolores, possimus pariatur
+                        animi temporibus nesciunt praesentium dolore sed nulla... </p>
+                    <a href="#"
+                       class="px-3 py-2  sm:px-5 sm:py-2 text-white font-semibold border border-orange-400 bg-orange-400 rounded-xl hover:bg-white hover:text-black w-full">Посмотреть</a>
+                </div>
+
+
+            </div>
+            <div class="flex items-center justify-around gap-4 mt-5">
+                <a href="/posts.html"
+                   class="px-3 py-2  sm:px-5 sm:py-2 text-center  text-white font-semibold border border-orange-400 bg-orange-400 rounded-xl hover:bg-white hover:text-black w-50">Посмотреть
+                    все</a>
+            </div>
+        </div>
+
+    </section>
+    <!--    Блог end -->
+
+    <!-- Онлайн тесты-->
+    <!--????-->
+    <!-- Онлайн тесты end -->
+
+    <!--    Справка FAQ -->
+    <section class="py-20 bg-gray-200 ">
+        <div class=" container flex flex-col items-center justify-around gap-4">
+            <h3 class="text-center text-3xl mb-5">Справка FAQ</h3>
+            <div class="space-y-4 w-full lg:w-200">
+                <details class="group [&_summary::-webkit-details-marker]:hidden" open>
+                    <summary
+                            class="flex cursor-pointer items-center justify-between gap-1.5 rounded-lg bg-gray-50 p-4 text-gray-900"
+                    >
+                        <h2 class="font-medium">Lorem ipsum dolor sit amet consectetur adipisicing?</h2>
+
+                        <svg
+                                class="size-5 shrink-0 transition duration-300 group-open:-rotate-180"
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                        >
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </summary>
+
+                    <p class="mt-4 px-4 leading-relaxed text-gray-700">
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab hic veritatis molestias culpa in,
+                        recusandae laboriosam neque aliquid libero nesciunt voluptate dicta quo officiis explicabo
+                        consequuntur distinctio corporis earum similique!
+                    </p>
+                </details>
+
+                <details class="group [&_summary::-webkit-details-marker]:hidden">
+                    <summary
+                            class="flex cursor-pointer items-center justify-between gap-1.5 rounded-lg bg-gray-50 p-4 text-gray-900"
+                    >
+                        <h2 class="font-medium">Lorem ipsum dolor sit amet consectetur adipisicing?</h2>
+
+                        <svg
+                                class="size-5 shrink-0 transition duration-300 group-open:-rotate-180"
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                        >
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </summary>
+
+                    <p class="mt-4 px-4 leading-relaxed text-gray-700">
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab hic veritatis molestias culpa in,
+                        recusandae laboriosam neque aliquid libero nesciunt voluptate dicta quo officiis explicabo
+                        consequuntur distinctio corporis earum similique!
+                    </p>
+                </details>
+                <details class="group [&_summary::-webkit-details-marker]:hidden">
+                    <summary
+                            class="flex cursor-pointer items-center justify-between gap-1.5 rounded-lg bg-gray-50 p-4 text-gray-900"
+                    >
+                        <h2 class="font-medium">Lorem ipsum dolor sit amet consectetur adipisicing?</h2>
+
+                        <svg
+                                class="size-5 shrink-0 transition duration-300 group-open:-rotate-180"
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                        >
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </summary>
+
+                    <p class="mt-4 px-4 leading-relaxed text-gray-700">
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab hic veritatis molestias culpa in,
+                        recusandae laboriosam neque aliquid libero nesciunt voluptate dicta quo officiis explicabo
+                        consequuntur distinctio corporis earum similique!
+                    </p>
+                </details>
+                <details class="group [&_summary::-webkit-details-marker]:hidden">
+                    <summary
+                            class="flex cursor-pointer items-center justify-between gap-1.5 rounded-lg bg-gray-50 p-4 text-gray-900"
+                    >
+                        <h2 class="font-medium">Lorem ipsum dolor sit amet consectetur adipisicing?</h2>
+
+                        <svg
+                                class="size-5 shrink-0 transition duration-300 group-open:-rotate-180"
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                        >
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </summary>
+
+                    <p class="mt-4 px-4 leading-relaxed text-gray-700">
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab hic veritatis molestias culpa in,
+                        recusandae laboriosam neque aliquid libero nesciunt voluptate dicta quo officiis explicabo
+                        consequuntur distinctio corporis earum similique!
+                    </p>
+                </details>
+
+            </div>
+        </div>
+
+    </section>
+    <!--    Справка FAQ end -->
+
+    <!--    Реклама -->
+    <section class="py-20  ">
+        <div class="container">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <!-- Первый рекламный блок -->
+                <div class="bg-blue-100 p-6 rounded-lg shadow-md">
+                    <h2 class="text-xl font-bold mb-2">Реклама 1</h2>
+                    <p class="text-gray-700">Здесь может быть ваша реклама.</p>
+                    <a href="#" class="mt-4 inline-block bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Узнать
+                        больше</a>
+                </div>
+
+                <!-- Второй рекламный блок -->
+                <div class="bg-green-100 p-6 rounded-lg shadow-md">
+                    <h2 class="text-xl font-bold mb-2">Реклама 2</h2>
+                    <p class="text-gray-700">Здесь может быть ваша реклама.</p>
+                    <a href="#" class="mt-4 inline-block bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">Узнать
+                        больше</a>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!--    Реклама  end-->
+</main>
+
+<footer class="bg-blue-950">
+    <div class="container text-center py-5">
+        <span class="text-white"> &copy; Все права защищены 2025 </span>
+    </div>
+</footer>
+</body>
+</html>

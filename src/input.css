@@ -1,0 +1,15 @@
+@import "tailwindcss";
+@import "flowbite/src/themes/default";
+@plugin "flowbite/plugin";
+@source "../node_modules/flowbite";
+
+
+@layer base {
+  .container {
+    max-width: 1280px !important; /* Кастомная ширина */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 2rem; /* Внутренние отступы */
+    padding-right: 2rem;
+  }
+}
