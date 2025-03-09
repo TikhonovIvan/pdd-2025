@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="./css/main.css" rel="stylesheet"/>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+</head>
+<body class="flex flex-col min-h-screen">
+<!-- Header start -->
+<header class="bg-blue-950 fixed top-0 inset-x-0 z-10">
+    <div class="container flex justify-between items-center py-5 text-white">
+        <a href="index.html" class="text-md sm:text-xl font-semibold">Автошкола</a>
+
+        <nav class="hidden lg:block">
+            <ul class="flex gap-8 text-[18px] font-semibold">
+                <li>
+                    <a href="index.html" class="hover:text-orange-400 hover:border-b-2"
+                    >Главная</a
+                    >
+                </li>
+                <li>
+                    <a href="#" class=" hover:text-orange-400 hover:border-b-2"
+                    >ПДД</a
+                    >
+                </li>
+                <li>
+                    <a href="#" class=" hover:text-orange-400 hover:border-b-2"
+                    >Блог</a
+                    >
+                </li>
+                <li>
+                    <a href="#" class=" hover:text-orange-400 hover:border-b-2"
+                    >Онлайн тест</a
+                    >
+                </li>
+                <li>
+                    <a href="#" class="hover:text-orange-400 hover:border-b-2"
+                    >Справка FAQ</a
+                    >
+                </li>
+            </ul>
+        </nav>
+
+        <div class="sm:flex gap-4 font-semibold text-white hidden">
+            <a
+                    href=""
+                    class="flex items-center px-5 py-2 bg-orange-400 rounded-xl hover:bg-white hover:text-black"
+            >Регистрация</a
+            >
+            <a
+                    href=""
+                    class="flex items-center px-5 py-2 bg-orange-400 rounded-xl hover:bg-white hover:text-black"
+            >Войти</a
+            >
+        </div>
+
+        <div class="flex lg:hidden">
+            <nav
+                    id="nav"
+                    class="absolute inset-x-0 top-full bg-blue-950 py-4 text-center hidden target:block peer"
+            >
+                <ul
+                        class="flex flex-col items-center gap-8 text-[18px] font-semibold"
+                >
+                    <li class="w-full">
+                        <a href="#" class="inline-block w-full">Главная</a>
+                    </li>
+                    <li class="w-full">
+                        <a href="#" class="inline-block w-full">ПДД</a>
+                    </li>
+                    <li class="w-full">
+                        <a href="#" class="inline-block w-full">Блог</a>
+                    </li>
+                    <li class="w-full">
+                        <a href="#" class="inline-block w-full">Онлайн тест</a>
+                    </li>
+                    <li class="w-full">
+                        <a href="#" class="inline-block w-full">Справка FAQ</a>
+                    </li>
+                </ul>
+                <div
+                        class="flex sm:hidden flex-col items-center gap-4 font-semibold mt-5"
+                >
+                    <a
+                            href=""
+                            class="w-35 px-5 py-2 bg-orange-400 rounded-xl hover:bg-white hover:text-black"
+                    >Регистрация</a
+                    >
+                    <a
+                            href=""
+                            class="text-center w-35 px-5 py-2 bg-orange-400 rounded-xl hover:bg-white hover:text-black"
+                    >Войти</a
+                    >
+                </div>
+            </nav>
+
+            <!-- Кнопка открыть меню -->
+            <a
+                    href="#nav"
+                    class="block peer-target:hidden peer-target:[&+a]:block"
+            >
+                <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        class="size-7"
+                >
+                    <path
+                            fill-rule="evenodd"
+                            d="M3 6.75A.75.75 0 0 1 3.75 6h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 6.75ZM3 12a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 12Zm0 5.25a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75a.75.75 0 0 1-.75-.75Z"
+                            clip-rule="evenodd"
+                    />
+                </svg>
+            </a>
+
+            <!-- Кнопка закрыть меню -->
+            <a href="#" class="hidden">
+                <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        class="size-6"
+                >
+                    <path
+                            fill-rule="evenodd"
+                            d="M5.47 5.47a.75.75 0 0 1 1.06 0L12 10.94l5.47-5.47a.75.75 0 1 1 1.06 1.06L13.06 12l5.47 5.47a.75.75 0 1 1-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 0 1-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 0 1 0-1.06Z"
+                            clip-rule="evenodd"
+                    />
+                </svg>
+            </a>
+        </div>
+    </div>
+</header>
+<!-- Header end -->
+
+<main class="flex-grow">
+    <section class="pt-30" x-data="{ activeTab: 'theme' }">
+        <div class="container">
+            <div class="flex flex-col items-center gap-4">
+                <div class="sm:hidden">
+                    <label for="Tab" class="sr-only">Tab</label>
+                    <select id="Tab" class="w-full rounded-md border-gray-200" x-model="activeTab">
+                        <option value="theme">По теме</option>
+                        <option value="tickets">По билетам</option>
+                        <option value="saved">Сохраненные</option>
+                        <option value="errors">Мои ошибки</option>
+                    </select>
+                </div>
+
+                <div class="hidden sm:block">
+                    <nav class="flex gap-15" aria-label="Tabs">
+                        <a href="#" @click.prevent="activeTab = 'theme'" class="rounded-lg p-2 text-md font-semibold text-black hover:bg-orange-400 hover:text-white" :class="{ 'bg-orange-400 text-white': activeTab === 'theme' }">По теме</a>
+                        <a href="#" @click.prevent="activeTab = 'tickets'" class="rounded-lg p-2 text-md font-semibold text-black hover:bg-orange-400 hover:text-white" :class="{ 'bg-orange-400 text-white': activeTab === 'tickets' }">По билетам</a>
+                        <a href="#" @click.prevent="activeTab = 'saved'" class="rounded-lg p-2 text-md font-semibold text-black hover:bg-orange-400 hover:text-white" :class="{ 'bg-orange-400 text-white': activeTab === 'saved' }">Сохраненные</a>
+                        <a href="#" @click.prevent="activeTab = 'errors'" class="rounded-lg p-2 text-md font-semibold text-black hover:bg-orange-400 hover:text-white" :class="{ 'bg-orange-400 text-white': activeTab === 'errors' }">Мои ошибки</a>
+                    </nav>
+                </div>
+                <hr class="w-full"/>
+            </div>
+        </div>
+
+        <!-- Содержимое категории -->
+        <section class="py-10">
+            <div class="container">
+                <!-- Содержимое категории По теме -->
+                <div x-show="activeTab === 'theme'" class="flex flex-wrap justify-around items-center gap-4 lg:gap-1">
+                    <template x-for="n in 4">
+                        <div class="flex flex-col gap-4 p-5 w-full md:max-w-[300px] items-center text-center bg-gray-200 rounded-xl">
+                            <h3 class="text-xl font-semibold">Бесплатные тесты ПДД</h3>
+                            <p>Пройдите бесплатные тесты ПДД и подготовьтесь к экзаменам</p>
+                            <a href="" class="px-3 py-2 sm:px-5 sm:py-2 text-white font-semibold border border-orange-400 bg-orange-400 rounded-xl hover:bg-white hover:text-black w-full">Выбрать</a>
+                        </div>
+                    </template>
+                </div>
+
+                <!-- Содержимое категории По билетам -->
+                <div x-show="activeTab === 'tickets'" class="flex flex-col items-center justify-between gap-2 lg:gap-6">
+                    <h4 class="text-2xl font-semibold">Категория AB</h4>
+                    <div class="flex flex-wrap justify-center gap-2">
+                        <template x-for="i in 4">
+                            <a href="#" class="bg-orange-400 px-4 py-2 rounded-lg text-white border border-orange-400 hover:bg-white hover:text-black">Билет <span x-text="i"></span></a>
+                        </template>
+                    </div>
+                    <br>
+                    <h4 class="text-2xl font-semibold">Категория CD</h4>
+                    <div class="flex flex-wrap justify-center gap-2">
+                        <template x-for="i in 8">
+                            <a href="#" class="bg-orange-400 px-4 py-2 rounded-lg text-white border border-orange-400 hover:bg-white hover:text-black">Билет <span x-text="i"></span></a>
+                        </template>
+                    </div>
+                </div>
+
+                <!-- Содержимое категории Сохраненные -->
+                <div x-show="activeTab === 'saved'" class="flex flex-wrap justify-around items-center gap-1">
+                    <template x-for="n in 2">
+                        <div class="flex flex-col gap-4 p-5  items-center text-center bg-gray-200 rounded-xl">
+                            <h3 class="text-xl font-semibold">Билет 1</h3>
+                            <p>15 мин</p>
+                            <p>10 вопросов</p>
+                            <div class=" flex flex-wrap justify-center gap-2">
+                                <a href="" class="px-5 py-2 sm:px-5 sm:py-2 text-white font-semibold border border-orange-400 bg-orange-400 rounded-xl hover:bg-white hover:text-black ">Начать тест</a>
+
+                                <a href="" class="px-5 py-2 sm:px-5 sm:py-2 text-white font-semibold border border-orange-400 bg-orange-400 rounded-xl hover:bg-white hover:text-black ">Вернуться к темам</a>
+
+                            </div>
+
+                        </div>
+                    </template>
+                </div>
+
+
+            </div>
+        </section>
+    </section>
+
+
+</main>
+
+<footer class="bg-blue-950">
+    <div class="container text-center py-5">
+        <span class="text-white"> &copy; Все права защищены 2025 </span>
+    </div>
+</footer>
+</body>
+</html>
