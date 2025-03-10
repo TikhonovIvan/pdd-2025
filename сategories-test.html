@@ -150,10 +150,18 @@
 
                 <div class="hidden sm:block">
                     <nav class="flex gap-15" aria-label="Tabs">
-                        <a href="#" @click.prevent="activeTab = 'theme'" class="rounded-lg p-2 text-md font-semibold text-black hover:bg-orange-400 hover:text-white" :class="{ 'bg-orange-400 text-white': activeTab === 'theme' }">По теме</a>
-                        <a href="#" @click.prevent="activeTab = 'tickets'" class="rounded-lg p-2 text-md font-semibold text-black hover:bg-orange-400 hover:text-white" :class="{ 'bg-orange-400 text-white': activeTab === 'tickets' }">По билетам</a>
-                        <a href="#" @click.prevent="activeTab = 'saved'" class="rounded-lg p-2 text-md font-semibold text-black hover:bg-orange-400 hover:text-white" :class="{ 'bg-orange-400 text-white': activeTab === 'saved' }">Сохраненные</a>
-                        <a href="#" @click.prevent="activeTab = 'errors'" class="rounded-lg p-2 text-md font-semibold text-black hover:bg-orange-400 hover:text-white" :class="{ 'bg-orange-400 text-white': activeTab === 'errors' }">Мои ошибки</a>
+                        <a href="#" @click.prevent="activeTab = 'theme'"
+                           class="rounded-lg p-2 text-md font-semibold text-black hover:bg-orange-400 hover:text-white"
+                           :class="{ 'bg-orange-400 text-white': activeTab === 'theme' }">По теме</a>
+                        <a href="#" @click.prevent="activeTab = 'tickets'"
+                           class="rounded-lg p-2 text-md font-semibold text-black hover:bg-orange-400 hover:text-white"
+                           :class="{ 'bg-orange-400 text-white': activeTab === 'tickets' }">По билетам</a>
+                        <a href="#" @click.prevent="activeTab = 'saved'"
+                           class="rounded-lg p-2 text-md font-semibold text-black hover:bg-orange-400 hover:text-white"
+                           :class="{ 'bg-orange-400 text-white': activeTab === 'saved' }">Сохраненные</a>
+                        <a href="#" @click.prevent="activeTab = 'errors'"
+                           class="rounded-lg p-2 text-md font-semibold text-black hover:bg-orange-400 hover:text-white"
+                           :class="{ 'bg-orange-400 text-white': activeTab === 'errors' }">Мои ошибки</a>
                     </nav>
                 </div>
                 <hr class="w-full"/>
@@ -165,50 +173,120 @@
             <div class="container">
                 <!-- Содержимое категории По теме -->
                 <div x-show="activeTab === 'theme'" class="flex flex-wrap justify-around items-center gap-4 lg:gap-1">
+                    <div class="flex flex-col items-center gap-4 text-center mb-8">
+                        <h3 class="text-2xl font-semibold mb-2 ">По теме</h3>
+                        <p>Режим “По темам” позволяет сосредоточиться на определенных разделах ПДД КР, таких как дорожные знаки, правила обгона или парковки. Выберите интересующую вас тему и проходите тестирование только по вопросам, связанным с этой темой. Это помогает углубленно изучить и закрепить знания по конкретным аспектам правил дорожного движения.</p>
+
+                    </div>
                     <template x-for="n in 4">
-                        <div class="flex flex-col gap-4 p-5 w-full md:max-w-[300px] items-center text-center bg-gray-200 rounded-xl">
+                        <div class="flex flex-col gap-4 p-5 w-full md:max-w-[280px] items-center text-center bg-gray-200 rounded-xl">
                             <h3 class="text-xl font-semibold">Бесплатные тесты ПДД</h3>
                             <p>Пройдите бесплатные тесты ПДД и подготовьтесь к экзаменам</p>
-                            <a href="" class="px-3 py-2 sm:px-5 sm:py-2 text-white font-semibold border border-orange-400 bg-orange-400 rounded-xl hover:bg-white hover:text-black w-full">Выбрать</a>
+                            <a href=""
+                               class="px-3 py-2 sm:px-5 sm:py-2 text-white font-semibold border border-orange-400 bg-orange-400 rounded-xl hover:bg-white hover:text-black w-full">Выбрать</a>
                         </div>
                     </template>
                 </div>
 
                 <!-- Содержимое категории По билетам -->
                 <div x-show="activeTab === 'tickets'" class="flex flex-col items-center justify-between gap-2 lg:gap-6">
+                    <div class="flex flex-col items-center gap-4 text-center">
+                        <h3 class="text-2xl font-semibold mb-2 ">По билетам</h3>
+                        <p>В режиме “По билетам” вы можете выбрать конкретный билет из официального перечня и пройти тестирование по вопросам, содержащимся в этом билете.
+                            <br> Это позволяет систематически изучать материал и проверять свои знания по каждому билету отдельно. Вы можете вернуться к любому билету в любое время для повторного прохождения</p>
+
+                    </div>
+
                     <h4 class="text-2xl font-semibold">Категория AB</h4>
                     <div class="flex flex-wrap justify-center gap-2">
                         <template x-for="i in 4">
-                            <a href="#" class="bg-orange-400 px-4 py-2 rounded-lg text-white border border-orange-400 hover:bg-white hover:text-black">Билет <span x-text="i"></span></a>
+                            <a href="#"
+                               class="bg-orange-400 px-4 py-2 rounded-lg text-white border border-orange-400 hover:bg-white hover:text-black">Билет
+                                <span x-text="i"></span></a>
                         </template>
                     </div>
                     <br>
                     <h4 class="text-2xl font-semibold">Категория CD</h4>
                     <div class="flex flex-wrap justify-center gap-2">
                         <template x-for="i in 8">
-                            <a href="#" class="bg-orange-400 px-4 py-2 rounded-lg text-white border border-orange-400 hover:bg-white hover:text-black">Билет <span x-text="i"></span></a>
+                            <a href="#"
+                               class="bg-orange-400 px-4 py-2 rounded-lg text-white border border-orange-400 hover:bg-white hover:text-black">Билет
+                                <span x-text="i"></span></a>
                         </template>
                     </div>
                 </div>
 
                 <!-- Содержимое категории Сохраненные -->
-                <div x-show="activeTab === 'saved'" class="flex flex-wrap justify-around items-center gap-1">
+                <div x-show="activeTab === 'saved'" class="flex flex-col items-center gap-1">
+                    <div class="flex flex-col items-center gap-4 text-center">
+                        <h3 class="text-2xl font-semibold mb-2 ">Сохраненные</h3>
+                        <p>В этот раздел можно добавлять вопросы, которые Вы хотите учить отдельно. </p>
+                        <p> Для этого Вам нужно выбрать вопрос в тестах, нажав на кнопку **Сохранить вопрос** </p>
+                    </div>
+                    <div class="flex flex-col items-center justify-center gap-4 text-center p-4 mt-5 bg-gray-200 rounded-xl">
+                        <p>Количество вопросов 5</p>
+                        <a href="#" class="bg-orange-400 text-white px-3 py-2 rounded-xl hover:bg-white hover:text-black">Начать тест</a>
+                    </div>
+                </div>
+
+                <!-- Содержимое категории Мои ошибки -->
+                <div x-show="activeTab === 'errors'" class="flex flex-col  items-center gap-3">
+                    <div class="flex flex-col items-center gap-4">
+                        <h3 class="text-2xl font-semibold mb-2 ">Мои ошибки </h3>
+                        <p>В этом разделе вы можете разобраться в вопросах, в которых вы допустили ошибки.</p>
+                        <p class="mb-4">Данный раздел предусмотрен для подробного разъяснения с примерами в которых были
+                            допущены ошибки</p>
+                    </div>
                     <template x-for="n in 2">
-                        <div class="flex flex-col gap-4 p-5  items-center text-center bg-gray-200 rounded-xl">
-                            <h3 class="text-xl font-semibold">Билет 1</h3>
-                            <p>15 мин</p>
-                            <p>10 вопросов</p>
-                            <div class=" flex flex-wrap justify-center gap-2">
-                                <a href="" class="px-5 py-2 sm:px-5 sm:py-2 text-white font-semibold border border-orange-400 bg-orange-400 rounded-xl hover:bg-white hover:text-black ">Начать тест</a>
+                        <div class="space-y-4 w-full lg:w-200 mb-5">
+                            <details class="group [&_summary::-webkit-details-marker]:hidden">
+                                <summary
+                                        class="flex cursor-pointer items-center justify-between gap-1.5 rounded-lg bg-gray-100 p-4 text-gray-900"
+                                >
+                                    <h2 class="font-medium">Сколько проезжих частей имеет данная дорога?</h2>
 
-                                <a href="" class="px-5 py-2 sm:px-5 sm:py-2 text-white font-semibold border border-orange-400 bg-orange-400 rounded-xl hover:bg-white hover:text-black ">Вернуться к темам</a>
+                                    <svg
+                                            class="size-5 shrink-0 transition duration-300 group-open:-rotate-180"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            fill="none"
+                                            viewBox="0 0 24 24"
+                                            stroke="currentColor"
+                                    >
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                              d="M19 9l-7 7-7-7"/>
+                                    </svg>
+                                </summary>
+                                <img src="img/v1.png" alt="">
 
-                            </div>
+                                <div class="flex flex-col gap-2 text-center">
+                                    <a href="" class=" w-full bg-gray-200 text-black px-3 py-2 ">Одну</a>
+                                    <a href="" class=" w-full bg-gray-200 text-black px-3 py-2 ">Две</a>
+                                    <a href="" class=" w-full bg-gray-200 text-black px-3 py-2 ">Четыре</a>
+                                </div>
+                                <div class="flex flex-col gap-4 ">
+                                    <p>Пояснения к вопросу:</p>
+                                    <p class="mt-4 px-4 leading-relaxed text-gray-700">
+                                        <span class=" bg-yellow-400">Ответ - Одну</span>
+                                        <br>
+                                        На дороге нанесена разметка 1.3, разделительная полоса отсутствует,
+                                        следовательно перед нами одна проезжая часть.
 
+                                        ПДД КР пункт 1.2.
+                                        "Проезжая часть" - элемент дороги, предназначенный для движения безрельсовых
+                                        транспортных средств.
+                                    </p>
+                                    <div class="text-center">
+                                        <a href="#"
+                                           class="px-3 py-2 bg-orange-400 text-white rounded-xl max-w-[280px] text-center ">
+                                            Пройти тест заново</a>
+                                    </div>
+
+                                </div>
+
+                            </details>
                         </div>
                     </template>
                 </div>
-
 
             </div>
         </section>
