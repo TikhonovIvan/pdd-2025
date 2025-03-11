@@ -172,18 +172,33 @@
         <section class="py-10">
             <div class="container">
                 <!-- Содержимое категории По теме -->
-                <div x-show="activeTab === 'theme'" class="flex flex-wrap justify-around items-center gap-4 lg:gap-1">
+                <div x-data="{
+        themes: [
+            'Общие положения и обязанности водителей',
+            'Применение специальных сигналов',
+            'Сигналы светофора или регулировщика',
+            'Применение аварийной сигнализации',
+            'Начало движения, маневрирование',
+            'Расположение ТС на проезжей части',
+            'Скорость движения и дистанция',
+            'Обгон, встречный  разъезд ',
+            'Остановка, стоянка транспорта',
+            'Проезд перекрестков'
+        ]
+    }"
+                     x-show="activeTab === 'theme'"
+                     class="flex flex-wrap items-center gap-6 lg:gap-4"
+                >
                     <div class="flex flex-col items-center gap-4 text-center mb-8">
-                        <h3 class="text-2xl font-semibold mb-2 ">По теме</h3>
+                        <h3 class="text-2xl font-semibold mb-2">По теме</h3>
                         <p>Режим “По темам” позволяет сосредоточиться на определенных разделах ПДД КР, таких как дорожные знаки, правила обгона или парковки. Выберите интересующую вас тему и проходите тестирование только по вопросам, связанным с этой темой. Это помогает углубленно изучить и закрепить знания по конкретным аспектам правил дорожного движения.</p>
-
                     </div>
-                    <template x-for="n in 4">
+
+                    <template x-for="(theme, index) in themes" :key="index">
                         <div class="flex flex-col gap-4 p-5 w-full md:max-w-[280px] items-center text-center bg-gray-200 rounded-xl">
-                            <h3 class="text-xl font-semibold">Бесплатные тесты ПДД</h3>
-                            <p>Пройдите бесплатные тесты ПДД и подготовьтесь к экзаменам</p>
-                            <a href=""
-                               class="px-3 py-2 sm:px-5 sm:py-2 text-white font-semibold border border-orange-400 bg-orange-400 rounded-xl hover:bg-white hover:text-black w-full">Выбрать</a>
+                            <h3 class="text-xl font-semibold">Раздел <span x-text="index + 1"></span></h3>
+                            <p x-text="theme"></p>
+                            <a href="test.html" class="px-3 py-2 sm:px-5 sm:py-2 text-white font-semibold border border-orange-400 bg-orange-400 rounded-xl hover:bg-white hover:text-black w-full">Пройти тест</a>
                         </div>
                     </template>
                 </div>
